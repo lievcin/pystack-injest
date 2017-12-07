@@ -1,6 +1,7 @@
 from shared.context import JobContext
 from pyspark.sql import SQLContext
 from pyspark.sql.types import *
+import pyspark.sql.functions as sf
 
 class CombineFromCsvJobContext(JobContext):
     def _init_accumulators(self, sc):
