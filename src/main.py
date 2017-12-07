@@ -34,10 +34,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     print "Called with arguments: %s" % args
 
-    # environment = {
-    #     'PYSPARK_JOB_ARGS': ' '.join(args.job_args) if args.job_args else ''
-    # }
-
     job_args = dict()
     if args.job_args:
         job_args_tuples = [arg_str.split('=') for arg_str in args.job_args]
@@ -46,7 +42,6 @@ if __name__ == '__main__':
 
     print '\nRunning job %s...\nenvironment is %s\n' % (args.job_name, 'moonshot')
 
-    # os.environ.update(environment)
     sc = pyspark.SparkContext(appName=args.job_name)
     job_module = importlib.import_module('jobs.%s' % args.job_name)
 
