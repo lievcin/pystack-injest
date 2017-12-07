@@ -185,7 +185,7 @@ def analyze(sc):
         , 'average_answers_per_question' \
         , 'average_accepted_answers_per_question' \
         , 'average_question_comments') \
-        .limit(100)
+        .limit(100) \
         .coalesce(1) \
         .write \
         .format('com.databricks.spark.csv') \
