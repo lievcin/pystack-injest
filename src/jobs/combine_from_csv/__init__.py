@@ -149,9 +149,9 @@ def analyze(sc):
 
     master_df = df_users \
         .join(df_badges, df_users.id == df_badges.user_id, 'left_outer') \
-        .join(df_comments, master_df.id == df_comments.user_id, 'left_outer') \
-        .join(answer_summary, master_df.id == answer_summary.user_id, 'left_outer') \
-        .join(question_summary, master_df.id == question_summary.user_id, 'left_outer')
+        .join(df_comments, df_users.id == df_comments.user_id, 'left_outer') \
+        .join(answer_summary, df_users.id == answer_summary.user_id, 'left_outer') \
+        .join(question_summary, df_users.id == question_summary.user_id, 'left_outer')
 
     master_df.select('id' \
         , 'reputation' \
