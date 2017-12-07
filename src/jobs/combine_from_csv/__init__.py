@@ -7,7 +7,7 @@ class CombineFromCsvJobContext(JobContext):
         self.initalize_counter(sc, 'combinedDf')
 
 def analyze(sc):
-    context = BadgesToCsvJobContext(sc)
+    context = CombineFromCsvJobContext(sc)
     sqlContext = SQLContext(sc)
 
     #####################################################################################
