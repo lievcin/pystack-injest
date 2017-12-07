@@ -191,4 +191,4 @@ def analyze(sc):
         .format('com.databricks.spark.csv') \
         .option("header", "true") \
         .mode("overwrite") \
-        .save('/user/group-AI/so_file_sample_100.csv')
+        .save('/user/group-AI/so_file.csv')
